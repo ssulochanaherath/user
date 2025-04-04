@@ -17,4 +17,14 @@ public class User {
     public ResponseEntity<String> createUser(@RequestBody Map<String, String> user) {
         return ResponseEntity.ok(weavyService.createUser(user));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateUser(@PathVariable String id, @RequestBody Map<String, String> user) {
+        return ResponseEntity.ok(weavyService.updateUser(id, user));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable String id) {
+        return ResponseEntity.ok(weavyService.deleteUser(id));
+    }
 }
